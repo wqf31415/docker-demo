@@ -1,14 +1,5 @@
+server:
+  port: 8080
 spring:
   application:
-    name: Demo
-  datasource:
-    url: jdbc:mysql://localhost:3306/dockerDemo?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8
-    username: root
-    password:
-    type: com.zaxxer.hikari.HikariDataSource
-  jpa:
-    hibernate:
-      ddl-auto: none
-
-server:
-  port: 8908
+    name: DockerDemo

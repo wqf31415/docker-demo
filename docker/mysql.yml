@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  dockerdemo-mysql:
+    container_name: dockerdemo-mysql
+    image: mysql:5.7
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=docker-demo
+    ports:
+      - 4306:3306
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp

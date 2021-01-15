@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  my-app:
+    links:
+      - dockerdemo-mysql
+    image: myapp:1.0
+    container_name: my-app
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://dockerdemo-mysql:3306/docker-demo?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+    ports:
+      - 8080:8080
+  dockerdemo-mysql:
+    extends:
+      file: mysql.yml
+      service: dockerdemo-mysql

@@ -7,11 +7,6 @@ import xyz.wqf.dockerdemo.repository.StudentRepository;
 
 import java.util.List;
 
-/**
- * Created by Administrator on 2021/1/14.
- *
- * @author WeiQuanfu
- */
 @RestController
 public class StudentResource {
     @Autowired

@@ -46,6 +46,33 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <!-- dockerfile 打包插件 -->
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.13</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- 打包后的镜像名 -->
+                    <repository>myapp</repository>
+                    <!-- 指定 Dockerfile 文件 -->
+                    <!--<dockerfile>docker/Dockerfile</dockerfile>-->
+                    <!-- 版本号 -->
+                    <tag>${project.version}</tag>
+                    <!-- 构建参数，将传入 Dockerfile 中使用 -->
+                    <buildArgs>
+                        <!-- 打包后的 jar 包名 -->
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

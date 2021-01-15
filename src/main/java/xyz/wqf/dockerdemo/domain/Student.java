@@ -5,11 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * Created by Administrator on 2021/1/14.
- *
- * @author WeiQuanfu
- */
 @Entity
 public class Student {
     @Id

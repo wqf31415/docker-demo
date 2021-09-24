@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import xyz.wqf.dockerdemo.domain.Student;
 import xyz.wqf.dockerdemo.repository.StudentRepository;
+import xyz.wqf.dockerdemo.web.StudentVM;
 
 import java.util.List;
 
@@ -23,13 +24,13 @@ public class StudentResource {
     }
 
     @PostMapping("/students")
-    public Student createOne(Student student){
-        return studentRepository.save(student);
+    public Student createOne(StudentVM student){
+        return studentRepository.save(student.transfrom());
     }
 
     @PutMapping("/students")
-    public Student modifyOne(Student student){
-        return studentRepository.save(student);
+    public Student modifyOne(StudentVM student){
+        return studentRepository.save(student.transfrom());
     }
 
     @DeleteMapping("/students/{id}")
